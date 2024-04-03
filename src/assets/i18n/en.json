@@ -1,0 +1,14 @@
+{
+    "education": "Education",
+    "interests": "Interests",
+    "experience": "Experience",
+    "contact": "Contact",
+    "name": "Name and surrname",
+    "nameRequired": "Name and Surrname are required",
+    "email": "e-mail",
+    "emailRequired": "e-mail is required",
+    "invalidEmail": "Invalid e-mail",
+    "message": "message",
+    "messageRequired": "Message is required",
+    "submit": "Send"
+  }

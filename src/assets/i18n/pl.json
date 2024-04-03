@@ -1,0 +1,14 @@
+{
+    "education": "Edukacja",
+    "interests": "Zainteresowania",
+    "experience": "Doświadczenie",
+    "contact": "Kontakt",
+    "name": "Imię i nazwisko",
+    "nameRequired": "Imię i nazwisko są wymagane",
+    "email": "Adres e-mail",
+    "emailRequired": "Adres e-mail jest wymagany",
+    "invalidEmail": "Nieprawidłowy adres e-mail",
+    "message": "Wiadomość",
+    "messageRequired": "Wiadomość jest wymagana",
+    "submit": "Wyślij"
+  }

@@ -1,35 +1,51 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { Router } from '@angular/router';
+import { By } from '@angular/platform-browser';
+import { NavComponent } from './nav.component';
 
-describe('AppComponent', () => {
+describe('NavComponent', () => {
+  let component: NavComponent;
+  let fixture: ComponentFixture<NavComponent>;
+  let router: Router;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+      declarations: [ NavComponent ],
+      imports: [ RouterTestingModule ]
+    })
+    .compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'mycv-project'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('mycv-project');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(NavComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, mycv-project');
+    router = TestBed.inject(Router);
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should navigate to /education when education link is clicked', () => {
+    const educationLink = fixture.debugElement.query(By.css('a[routerLink="/education"]'));
+    educationLink.triggerEventHandler('click', null);
+    fixture.detectChanges();
+    expect(router.url).toBe('/education');
+  });
+
+  it('should switch language to "pl" when PL button is clicked', () => {
+    const plButton = fixture.debugElement.query(By.css('button:contains("PL")'));
+    plButton.triggerEventHandler('click', null);
+    fixture.detectChanges();
+    expect(component.selectedLanguage).toBe('pl');
+  });
+
+  it('should switch language to "en" when EN button is clicked', () => {
+    const enButton = fixture.debugElement.query(By.css('button:contains("EN")'));
+    enButton.triggerEventHandler('click', null);
+    fixture.detectChanges();
+    expect(component.selectedLanguage).toBe('en');
   });
 });

@@ -1,0 +1,75 @@
+nav {
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    width: 98.95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 70%; /* Linki zajmują 70% szerokości */
+    text-align: center;
+  }
+  
+  nav a.active {
+    font-weight: bold;
+  }
+  
+  nav button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    float: right;
+    margin-left: 10px; /* Dodatkowy odstęp między przyciskami */
+  }
+  
+  nav button:hover {
+    text-decoration: underline;
+  }
+
+  /* Style dla stopki */
+footer {
+    background-color: #333; /* Kolor tła */
+    color: #fff; /* Kolor tekstu */
+    padding: 20px; /* Wewnętrzny odstęp */
+    position: fixed;
+    bottom: 0;
+    width: 98.95%;
+    text-align: center;
+  }
+  
+  /* Styl dla ikon */
+  .social-media-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .social-media-icons li {
+    display: inline-block;
+    margin-right: 100px; /* Odstęp między ikonami */
+  }
+  
+  .social-media-icons li:last-child {
+    margin-right: 0; /* Usunięcie marginesu z ostatniej ikony */
+  }
+  
+  .social-media-icons a {
+    color: #fff; /* Kolor ikon */
+    font-size: 24px; /* Rozmiar ikon */
+    transition: color 0.3s ease; /* Efekt przejścia */
+  }
+  
+  .social-media-icons a:hover {
+    color: #ffcc00; /* Kolor ikon przy najechaniu myszką */
+  }
+  
+  

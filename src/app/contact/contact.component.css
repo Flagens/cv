@@ -1,0 +1,37 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; 
+    margin: auto;
+  }
+  
+
+  mat-label {
+    font-weight: bold;
+  }
+  
+
+  mat-form-field {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+
+  button {
+    width: 100%;
+  }
+  
+
+  mat-error {
+    font-size: 14px;
+    color: red;
+    margin-top: 5px;
+  }
+  
+
+  textarea {
+    min-height: 100px;
+  }
+  

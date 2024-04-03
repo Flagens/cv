@@ -1,0 +1,33 @@
+<h2>{{ 'contact' | translate }}</h2>
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>{{ 'name' | translate }}</mat-label>
+    <input matInput [(ngModel)]="contactForm.name" name="name" required>
+    <mat-error *ngIf="!contactForm.name">
+      {{ 'nameRequired' | translate}}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>{{ 'email' | translate }}</mat-label>
+    <input matInput [(ngModel)]="contactForm.email" name="email" required email>
+    <mat-error *ngIf="!contactForm.email">
+      {{ 'emailRequired' | translate}}
+    </mat-error>
+    <mat-error *ngIf="!isValidEmail(contactForm.email)">
+        {{ 'invalidEmail' | translate }}
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>{{ 'message' | translate }}</mat-label>
+    <textarea matInput [(ngModel)]="contactForm.message" name="message" required></textarea>
+    <mat-error *ngIf="!contactForm.message">
+      {{ 'messageRequired' | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!contactForm.name || !contactForm.email || !contactForm.message">
+    {{ 'submit' | translate }}
+  </button>
+</form>
